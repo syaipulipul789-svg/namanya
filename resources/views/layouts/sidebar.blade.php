@@ -12,14 +12,14 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+            <li class="nav-item {{ request()->is('dashboard')? 'active': '' }}">
+                <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
+                </li>
+                
+                <!-- Divider -->
+                <hr class="sidebar-divider">
 
             <!-- Heading -->
             <div class="sidebar-heading">
@@ -27,17 +27,20 @@
             </div>
 
             <!-- Nav Item - Tables -->
-            <li class="nav-item">
+            <li class="nav-item {{ request()->is('resident*')? 'active' : ''}}">
                 <a class="nav-link" href="/resident">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data penduduk</span></a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/laporan">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>penyampaian laporan</span></a>
+            </li>
+           
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+          
         </ul> 
