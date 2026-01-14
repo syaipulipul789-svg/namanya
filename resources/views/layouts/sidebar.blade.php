@@ -3,7 +3,7 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                    <i class="fas fa-hands-helping"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Lapor Pak <sup></sup></div>
             </a>
@@ -17,7 +17,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
                 </li>
-                
+
                 <!-- Divider -->
                 <hr class="sidebar-divider">
 
@@ -27,20 +27,29 @@
             </div>
 
             <!-- Nav Item - Tables -->
+            @if (Auth::user()->role == 'admin')
             <li class="nav-item {{ request()->is('resident*')? 'active' : ''}}">
                 <a class="nav-link" href="/resident">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Data penduduk</span></a>
             </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link" href="/laporan">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-clipboard"></i>
                     <span>penyampaian laporan</span></a>
             </li>
-           
+
+            <!-- Nav Logout - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span></a>
+            </li>
+
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
-          
-        </ul> 
+
+        </ul>

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('kategori');
             $table->string('nama_pelapor');
             $table->string('no_hp');
+            $table->string('bukti')->nullable();
+            $table->enum('status', ['proses', 'selesai'])->default('proses');
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@
     <div class="card-body">
         <h4 class="mb-3">Sampaikan Laporan</h4>
 
-        <form action="{{ route('laporan.store') }}" method="POST">
+        <form action="{{ route('laporan.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             <div class="mb-3">
@@ -37,10 +37,14 @@
                 <input type="text" name="no_hp" class="form-control">
             </div>
 
+            <div class="mb-3">
+                <label>Kirim Bukti</label>
+                <input type="file" name="bukti" class="form-control">
+            </div>
+
             <button class="btn btn-primary">Kirim Laporan</button>
             <a href="{{ route('laporan.index') }}" class="btn btn-secondary">Kembali</a>
         </form>
     </div>
 </div>
 @endsection
-    
