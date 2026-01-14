@@ -5,9 +5,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ResidentController;
 
-Route::get('/', function () {
-    return view('layouts.app');
-});
 
 
 
@@ -16,6 +13,9 @@ Route::post('/login', [LoginController::class, 'store'])->name('auth.login.store
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return view('layouts.app');
+    });
     Route::get('/dashboard', function () {
         return view('pages.dashboard');
     })->name('dashboard');
