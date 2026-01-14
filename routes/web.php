@@ -4,6 +4,8 @@ use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ReportController;
 use App\Http\Controllers\ResidentController;
+use App\Models\LaporanWarga as Laporan;
+use App\Models\Resident;
 
 
 
@@ -17,7 +19,9 @@ Route::middleware('auth')->group(function () {
         return view('layouts.app');
     });
     Route::get('/dashboard', function () {
-        return view('pages.dashboard');
+        $jumlahAduan=Laporan::count();
+        $jumlahPenduduk=Resident::count();
+        return view('pages.dashboard',compact('jumlahAduan','jumlahPenduduk'));
     })->name('dashboard');
     Route::middleware('auth_admin')->group(function () {
         Route::get('/resident', [ResidentController::class,'index']);
