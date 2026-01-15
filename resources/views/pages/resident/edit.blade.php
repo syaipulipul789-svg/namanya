@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <div class="form-group mb-3" >
                                 <label for="nik">nik</label>
-                                <input type="number" inputmode="numeric" 
+                                <input type="number" inputmode="numeric"
                                 name="nik" id="nik" value="{{ $resident->nik }}" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
@@ -33,7 +33,7 @@
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="religion">Agama</label>
-                                <input type="text" 
+                                <input type="text"
                                  name="religion" id="religion" value="{{ $resident->religion }}"class="form-control">
                             </div>
                             <div class="form-group mb-3" >
@@ -46,27 +46,27 @@
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="birth_place">tempat lahir</label>
-                                <input type="text" 
+                                <input type="text"
                                  name="birth_place" id="birth_place" value="{{ $resident->birth_place }}"class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="addres">Alamat Tempat Tinggal</label>
-                                <input type="alamat" 
+                                <input type="alamat"
                                  name="addres" id="addres" value="{{ $resident->addres }}"  class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="birth_date">tanggal lahir</label>
-                                <input type="date" 
+                                <input type="date"
                                  name="birth_date" id="birth_date" value="{{ $resident->birth_date }}" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="occupation">pekerjaan </label>
-                                <input type="text" 
+                                <input type="text"
                                  name="occupation" id="occupation" value="{{ $resident->occupation }}" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="phone">telepon </label>
-                                <input type="text" 
+                                <input type="text"
                                  name="phone" id="phone" value="{{ $resident->phone }}" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
@@ -77,8 +77,18 @@
                                     <option {{ $resident->marital_status == 'merried' ? 'selected' : '' }} value="merried">sudah menikah</option>
                                     <option {{ $resident->marital_status == 'divorced' ? 'selected' : '' }} value="divorced">cerai</option>
                                     <option {{ $resident->marital_status == 'widowed' ? 'selected' : '' }} value="widowed">janda/duda</option>
-                                </select> 
+                                </select>
                             </div>
+                            @if (Auth::user()->role == 'admin')
+                            <div class="form-group mb-3" >
+                                <label for="status">status</label>
+                                <select name="status" id="status" class="form-control">
+                                    <option value="active">Aktif</option>
+                                    <option value="moved">pindah</option>
+                                    <option value="deceased">meninggal</option>
+                                </select>
+                            </div>
+                            @endif
                         </div>
                         <div class="card-footer">
                             <div class="d-flex justify-content-end" style="gap:10px">
@@ -96,5 +106,5 @@
                 </form>
             </div>
          </div>
-        
+
 @endsection

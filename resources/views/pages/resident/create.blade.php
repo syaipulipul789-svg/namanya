@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <div class="form-group mb-3" >
                                 <label for="nik">nik</label>
-                                <input type="number" inputmode="numeric" 
+                                <input type="number" inputmode="numeric"
                                 name="nik" id="nik" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
@@ -31,7 +31,7 @@
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="religion">Agama</label>
-                                <input type="text" 
+                                <input type="text"
                                  name="religion" id="religion" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
@@ -44,27 +44,27 @@
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="birth_place">tempat lahir</label>
-                                <input type="text" 
-                                 name="birth_place" id="birth_place" class="form-control">
+                                <input type="text"
+                                name="birth_place" id="birth_place" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="addres">Alamat Tempat Tinggal</label>
-                                <input type="alamat" 
+                                <input type="alamat"
                                  name="addres" id="addres"  class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="birth_date">tanggal lahir</label>
-                                <input type="date" 
-                                 name="birth_date" id="birth_date" class="form-control">
+                                <input type="date"
+                                name="birth_date" id="birth_date" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="occupation">pekerjaan </label>
-                                <input type="text" 
+                                <input type="text"
                                  name="occupation" id="occupation" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
                                 <label for="phone">telepon </label>
-                                <input type="text" 
+                                <input type="text"
                                  name="phone" id="phone" class="form-control">
                             </div>
                             <div class="form-group mb-3" >
@@ -75,7 +75,15 @@
                                     <option value="merried">sudah menikah</option>
                                     <option value="divorced">cerai</option>
                                     <option value="widowed">janda/duda</option>
-                                </select> 
+                                </select>
+                            </div>
+                            <div class="form-group mb-3" >
+                                <label for="status">status</label>
+                                <select name ="status" id="status" class="form-control">
+                                    <option value="active">Aktif</option>
+                                    <option value="moved">pindah</option>
+                                    <option value="deceased">meninggal</option>
+                                </select>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -94,5 +102,5 @@
                 </form>
             </div>
          </div>
-        
+
 @endsection

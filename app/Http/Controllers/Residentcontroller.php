@@ -18,14 +18,14 @@ class Residentcontroller extends Controller
     return view('pages.resident.index',[
         'residents' => $residents,
         ]);
-    
-    
+
+
     }
 
     public function create()
     {
         return view('pages.resident.create');
-        
+
       }
 
     public function store(Request $request)
@@ -41,6 +41,7 @@ class Residentcontroller extends Controller
             'marital_status' =>['required', Rule::in('single', 'merried', 'divorced', 'widowed')],
             'occupation' =>['nullable','max:100'],
             'phone' =>['nullable', 'max:20'],
+            'status' =>['required', Rule::in(['active', 'moved', 'deceased'])]
         ]);
 
         Resident::create($validatedData);
@@ -54,7 +55,7 @@ class Residentcontroller extends Controller
 
         return view('pages.resident.edit', ['resident' => $resident ]);
     }
-            
+
             public function update(Request $request, $id)
             {
                  $validated = $request->validate([
@@ -66,6 +67,7 @@ class Residentcontroller extends Controller
                     'addres' =>['required', 'max:600'],
                     'religion' =>['nullable', 'max:50'],
                     'marital_status' =>['required', Rule::in('single', 'merried', 'divorced', 'widowed')],
+                    'status' =>['required', Rule::in('active', 'moved', 'deceased')],
                     'occupation' =>['nullable','max:100'],
                     'phone' =>['nullable', 'max:20'],
                 ]);
@@ -79,9 +81,8 @@ class Residentcontroller extends Controller
             {
                 $residents = Resident::findOrfail($id);
                 $residents->delete();
-        
-                return redirect('/resident')->with('succes', 'berhasil menghapus data'); 
-                
+
+                return redirect('/resident')->with('succes', 'berhasil menghapus data');
+
            }
 }
-                
